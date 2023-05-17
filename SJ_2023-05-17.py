@@ -23,7 +23,7 @@ print(unikalus_sarasas)
 
 import pickle
 
-# Sukuriam funkciją, kuri sukuria darbuotoją
+
 def sukurti_darbuotoja(vardas, amzius, darbo_pozicija):
     darbuotojas = {
         "vardas": vardas,
@@ -43,7 +43,7 @@ def uzkrauti_darbuotojus(failo_pavadinimas):
         darbuotojai = pickle.load(failas)
     return darbuotojai
 
-# Sukuriam darbuotojų sąrašą
+
 darbuotojai = [
     sukurti_darbuotoja("Jonas", 24, "pagalbinis darbuotojas"),
     sukurti_darbuotoja("Marius", 28, "vairuotojas"),
@@ -97,9 +97,8 @@ def skaiciu_vidurkis(skaiciu_sarasas):
     return vidurkis
 
 with open("skaiciai.txt", "r") as failas:
-    skaiciai = failas.read().split(",")  # Skaičius atskirti kableliais
-    skaiciai = [int(s.strip()) for s in skaiciai]  # Konvertuoti į sveikus skaičius
-
+    skaiciai = failas.read().split(",")
+    skaiciai = [int(s.strip()) for s in skaiciai]
 print(skaiciai)
 
 vidurkis = skaiciu_vidurkis(skaiciai)
